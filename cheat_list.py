@@ -81,6 +81,7 @@ if 'purple' not in colors:
 print([x * 2 for x in range(10)])
 
 # programatically create list of even numbers from 0 - 9
+# function comprehension
 print([x for x in range(10) if x % 2 == 0])
 
 # split days string into list and then remove whitespace from each element
@@ -128,3 +129,132 @@ user = {
         'country': 'UK'
     }
 }
+
+
+class FootballPlayer(object):
+    def __init__(self, name, performance):
+        self.name = name
+        self.performance = performance
+
+    def total(self):
+        return sum(self.performance)
+
+    def average(self):
+        total = self.total()
+        return self.total() / len(self.performance)
+
+    # class method gets cls which is object that called it
+    @classmethod
+    def who_am_i(cls):
+        print(cls)
+
+
+player1 = FootballPlayer("Rolf", (3, 5, 21, 51))
+
+print(player1.name + ' have an average: ' + str(player1.average()))
+
+
+# *args unlimited ordered arguments
+def get_sum(*args):
+    return sum(args)
+
+print(get_sum(5, 7, 3, 14, 2))
+
+
+# **kwargs unlimited ordered or unordered key-value arguments
+def output_all(**kwargs):
+    print(kwargs)
+
+output_all(name = 'John', partner = "louise", player = True, wins = 0,
+        attempts = 45, age =  "33")
+
+
+# Class inheritance Python 2.x style
+class NewFootballPlayer(FootballPlayer):
+    def __init__(self, name, performance, location):
+        super(NewFootballPlayer, self).__init__(name, performance)
+        self.location = location
+
+    # defining static method, doesn't need any paramethers
+    @staticmethod
+    def say_hi(person):
+        return 'Hi ' + person
+
+
+player2 = NewFootballPlayer('Jimmy', (3, ), 'London')
+
+print(player2.name + ' is in ' + player2.location)
+
+# both will work as method is defined as static
+print(player2.say_hi('Vedran'))
+print(NewFootballPlayer.say_hi('World'))
+
+# will print object of class NewFootbalPlayer as that
+# is the class of object that called it (player2)
+print(player2.who_am_i())
+
+
+# filter vs function comprehension
+my_numbers = range(10)
+
+print('filter with function that we are passing')
+def give_me_evens(x):
+    return x % 2 == 0
+print(list(filter(give_me_evens, my_numbers)))
+
+print('filter with lambda function')
+print(list(filter(lambda x: x % 2 == 0, my_numbers)))
+
+
+print('function comprehension')
+print([x for x in range(10) if x % 2 == 0])
+
+
+# decorators
+
+# import is usually on the top of file
+import functools
+
+# define decorator
+def my_decorator(func):
+    @functools.wraps(func)
+    def function_that_runs_func():
+        print('In the decorator, before the function')
+        func()
+        print('In the decorator, after the function')
+
+    return function_that_runs_func
+
+# use decorator on function
+@my_decorator
+def my_function():
+    print('i am the one who knocks!')
+
+my_function()
+
+
+
+# decorators can accept parameters but are created little bit nested
+print('\n\ndecorator with parameters')
+def decorator_with_arguments(number):
+    def my_decorator_two(func):
+        @functools.wraps(func)
+        def function_that_runs_func_two(*args, **kwargs):
+            print('In the decorator, before the function')
+
+            if number == 56:
+                print('You are not right user, not authenticated!')
+            else:
+                func(*args, **kwargs)
+
+            print('In the decorator, after the function')
+
+        return function_that_runs_func_two
+    return my_decorator_two
+
+
+@decorator_with_arguments(57)
+def my_function_two(x, y):
+    print(x + y)
+
+my_function_two(3, 5)
