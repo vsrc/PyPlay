@@ -8,8 +8,14 @@ print("world")
 
 # Lists [ ] - have index key
 friend_list = ['John', 'Joe', 'Sam', 'Aaron' ]
-friend_list.append('Mike')
 print(friend_list[0]) # will print John
+
+friend_list.append('Mike') # ['John', 'Joe', 'Sam', 'Aaron', 'Mike']
+friend_list.insert(1, "Pedro")
+print(friend_list) # will output ['John', 'Pedro', 'Joe', 'Sam', 'Aaron', 'Mike']
+
+friend_list.remove('Joe')
+print(friend_list) # will output ['John', 'Pedro', 'Sam', 'Aaron', 'Mike']
 
 friend_list[0] = 'James' # replacing John with James
 print(friend_list[0]) # will now print James
