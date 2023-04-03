@@ -42,7 +42,10 @@ europe_countries.difference(eng_language)
 days = 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'
 # split takes separator value and splits string whenever that separator value
 # occurs and returns list of strings
-days.split(', ')
+daysList = days.split(', ')
+
+type(daysList) # will output list
+'chewsday' in daysList # will output False
 
 # strip removes whitespaces from spring
 username = '   joe  '
