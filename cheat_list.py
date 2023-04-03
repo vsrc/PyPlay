@@ -110,6 +110,9 @@ student = { "name": "Joe", "age": 21, "grades": [15, 48, 79]}
 
 print(student["name"]) # will print Joe
 
+student.keys() # will print keys dict_keys(['name', 'age', 'grades'])
+student.values() # will print out values dict_values(['Joe', 21, [15, 48, 79]])
+
 sequence_numbers = { 1: 32, 2: "three", 3: "7" }
 print(sequence_numbers[2]) # will print three
 
