@@ -21,7 +21,9 @@ friend_list[0] = 'James' # replacing John with James
 print(friend_list[0]) # will now print James
 
 # Tuples ( ) - immutable
-colors = ('blue', 'yellow', 'green')
+colors = ('blue', 'yellow', 'green') 
+# also possible
+colors2 = 'blue', 'yellow', 'green' 
 
 # can not do my_tuple.append("red"), tuples are immutable
 print(colors[1]) # will print yellow
@@ -53,6 +55,8 @@ daysList = days.split(', ')
 numbers = [ 3, -1, -100, 25, 9, 77, 33, -100 ]
 numbers.sort() # will sort the numbers [-100, -100, -1, 3, 9, 25, 33, 77]
 numbers.count(-100) # will output 2 as there is two elements in this list with given param -100
+numbers.sort(reverse=True)
+print(numbers) # will print [77, 33, 25, 9, 3, -1, -100, -100]
 
 type(daysList) # will output list
 'chewsday' in daysList # will output False
