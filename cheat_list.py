@@ -44,6 +44,10 @@ days = 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'
 # occurs and returns list of strings
 daysList = days.split(', ')
 
+numbers = [ 3, -1, -100, 25, 9, 77, 33, -100 ]
+numbers.sort() # will sort the numbers [-100, -100, -1, 3, 9, 25, 33, 77]
+numbers.count(-100) # will output 2 as there is two elements in this list with given param -100
+
 type(daysList) # will output list
 'chewsday' in daysList # will output False
 
