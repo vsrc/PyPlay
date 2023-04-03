@@ -258,3 +258,8 @@ def my_function_two(x, y):
     print(x + y)
 
 my_function_two(3, 5)
+
+
+# helper for printing out interactive namespace
+%whos
+
