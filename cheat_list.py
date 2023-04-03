@@ -20,6 +20,9 @@ print(friend_list) # will output ['John', 'Pedro', 'Sam', 'Aaron', 'Mike']
 friend_list[0] = 'James' # replacing John with James
 print(friend_list[0]) # will now print James
 
+print(friend_list[-1]) # will print out the last element in the list 'Mike'
+print(friend_list[-2]) # will print out the second to last element in the list 'Aaron'
+
 # Tuples ( ) - immutable
 colors = ('blue', 'yellow', 'green') 
 # also possible
