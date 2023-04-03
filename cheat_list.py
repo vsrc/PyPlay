@@ -263,3 +263,11 @@ my_function_two(3, 5)
 # helper for printing out interactive namespace
 %whos
 
+# Output something like:
+
+# Variable   Type    Data/Info
+# ----------------------------
+# a          int     7
+# sideA      int     2
+# sideB      int     3
+# sideC      int     13
