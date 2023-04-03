@@ -294,3 +294,21 @@ my_function_two(3, 5)
 # sideA      int     2
 # sideB      int     3
 # sideC      int     13
+
+
+# Indexing and slicing
+
+a = range(5,11) # range is a generator
+b = list(a) # list is a constructor that takes a generator and returns a list
+b # returns [5, 6, 7, 8, 9, 10]
+
+b[0:2] # first two elements, starting at index 0, not including index 2
+b[:2] # same as above, both are [5, 6]
+
+start = 0
+stop = 5
+skip = 2
+b[start:stop:skip] # slicing, returns [5, 7, 9]
+
+b[1::2] # start at index 1, skip 2, returns [6, 8, 10]
+
