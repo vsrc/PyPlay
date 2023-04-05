@@ -312,3 +312,18 @@ b[start:stop:skip] # slicing, returns [5, 7, 9]
 
 b[1::2] # start at index 1, skip 2, returns [6, 8, 10]
 
+
+# pointers and copying
+avar = {'a': 1, 'b': 2}
+bvar = avar # bvar won't copy instead it will be just a pointer to the avar value
+
+import copy
+cvar = copy.deepcopy(avar) # this will be a separate copy
+
+print(id(avar)) # will printout an id of memory address for avar
+print(id(bvar)) # will printout same id as avar
+print(id(cvar)) # will printout different id of a memory address than avar
+
+
+
+
