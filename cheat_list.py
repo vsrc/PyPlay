@@ -320,9 +320,9 @@ bvar = avar # bvar won't copy instead it will be just a pointer to the avar valu
 import copy
 cvar = copy.deepcopy(avar) # this will be a separate copy
 
-print(id(avar)) # will printout an id of memory address for avar
+print(id(avar)) # will printout an id of the object associated with the avar variable
 print(id(bvar)) # will printout same id as avar
-print(id(cvar)) # will printout different id of a memory address than avar
+print(id(cvar)) # will printout different id of the object than avar variable
 
 
 
